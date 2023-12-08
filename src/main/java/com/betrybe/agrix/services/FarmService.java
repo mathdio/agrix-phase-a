@@ -7,6 +7,7 @@ import com.betrybe.agrix.models.repositories.CropRepository;
 import com.betrybe.agrix.models.repositories.FarmRepository;
 import java.util.List;
 import java.util.Optional;
+import java.util.stream.Collectors;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -58,12 +59,23 @@ public class FarmService {
    */
   public Crop setCrop(Long farmId, Crop crop) {
     Optional<Farm> optionalFarm = this.farmRepository.findById(farmId);
-
     if (optionalFarm.isEmpty()) {
       throw new NotFoundException("Fazenda não encontrada!");
     }
 
     crop.setFarm(optionalFarm.get());
     return this.cropRepository.save(crop);
+  }
+
+  public List<Crop> getAllCropsFromFarm(Long farmId) {
+    Optional<Farm> optionalFarm = this.farmRepository.findById(farmId);
+    if (optionalFarm.isEmpty()) {
+      throw new NotFoundException("Fazenda não encontrada!");
+    }
+
+    List<Crop> cropList = this.cropRepository.findAll();
+    return cropList.stream()
+        .filter(crop -> crop.getFarm().getId() == farmId)
+        .collect(Collectors.toList());
   }
 }

@@ -62,7 +62,7 @@ public class FarmController {
   public List<FarmDto> getAllFarms() {
     List<Farm> farmList = this.farmService.getAllFarms();
     return farmList.stream()
-        .map(farm -> new FarmDto(farm.getId(), farm.getName(), farm.getSize(), farm.getCrops()))
+        .map(farm -> new FarmDto(farm.getId(), farm.getName(), farm.getSize()))
         .collect(Collectors.toList());
   }
 
@@ -70,5 +70,14 @@ public class FarmController {
   public ResponseEntity<Farm> getFarmById(@PathVariable Long farmId) {
     Optional<Farm> optionalFarm = this.farmService.getFarmById(farmId);
     return ResponseEntity.ok(optionalFarm.get());
+  }
+
+  @GetMapping("/{farmId}/crops")
+  public List<CropDto> getAllCropsFromFarm(@PathVariable Long farmId) {
+    List<Crop> cropList = this.farmService.getAllCropsFromFarm(farmId);
+    return cropList.stream()
+        .map(crop -> new CropDto(crop.getId(), crop.getName(), crop.getPlantedArea(),
+            crop.getFarm().getId()))
+        .collect(Collectors.toList());
   }
 }

@@ -32,16 +32,15 @@ public class Farm {
   /**
    * Instantiates a new Farm.
    *
-   * @param id    the id
-   * @param name  the name
-   * @param size  the size
-   * @param crops the crops
+   * @param id   the id
+   * @param name the name
+   * @param size the size
    */
-  public Farm(Long id, String name, Double size, List<Crop> crops) {
+  public Farm(Long id, String name, Double size) {
     this.id = id;
     this.name = name;
     this.size = size;
-    this.crops = crops;
+    this.crops = null;
   }
 
   public Long getId() {
