@@ -9,6 +9,9 @@ import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 
+/**
+ * The type Crop.
+ */
 @Entity
 @Table(name = "crops")
 public class Crop {
@@ -26,6 +29,13 @@ public class Crop {
   public Crop() {
   }
 
+  /**
+   * Instantiates a new Crop.
+   *
+   * @param id          the id
+   * @param name        the name
+   * @param plantedArea the planted area
+   */
   public Crop(Long id, String name, Double plantedArea) {
     this.id = id;
     this.name = name;

@@ -10,6 +10,9 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+/**
+ * The type Farm service.
+ */
 @Service
 public class FarmService {
 
@@ -30,6 +33,12 @@ public class FarmService {
     return this.farmRepository.findAll();
   }
 
+  /**
+   * Gets farm by id.
+   *
+   * @param id the id
+   * @return the farm by id
+   */
   public Optional<Farm> getFarmById(Long id) {
     Optional<Farm> optionalFarm = this.farmRepository.findById(id);
 
@@ -40,6 +49,13 @@ public class FarmService {
     return optionalFarm;
   }
 
+  /**
+   * Sets crop.
+   *
+   * @param farmId the farm id
+   * @param crop   the crop
+   * @return the crop
+   */
   public Crop setCrop(Long farmId, Crop crop) {
     Optional<Farm> optionalFarm = this.farmRepository.findById(farmId);
 

@@ -9,6 +9,9 @@ import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 import java.util.List;
 
+/**
+ * The type Farm.
+ */
 @Entity
 @Table(name = "farms")
 public class Farm {
@@ -26,6 +29,14 @@ public class Farm {
   public Farm() {
   }
 
+  /**
+   * Instantiates a new Farm.
+   *
+   * @param id    the id
+   * @param name  the name
+   * @param size  the size
+   * @param crops the crops
+   */
   public Farm(Long id, String name, Double size, List<Crop> crops) {
     this.id = id;
     this.name = name;

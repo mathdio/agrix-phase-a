@@ -18,6 +18,9 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+/**
+ * The type Farm controller.
+ */
 @RestController
 @RequestMapping("/farms")
 public class FarmController {
@@ -35,6 +38,13 @@ public class FarmController {
     return ResponseEntity.status(HttpStatus.CREATED).body(newFarm);
   }
 
+  /**
+   * Sets crop.
+   *
+   * @param farmId  the farm id
+   * @param cropDto the crop dto
+   * @return the crop
+   */
   @PostMapping("/{farmId}/crops")
   public ResponseEntity<CropDto> setCrop(@PathVariable Long farmId, @RequestBody CropDto cropDto) {
     Crop newCrop = this.farmService.setCrop(farmId, cropDto.toCrop());
@@ -43,6 +53,11 @@ public class FarmController {
     return ResponseEntity.status(HttpStatus.CREATED).body(responseCropDto);
   }
 
+  /**
+   * Gets all farms.
+   *
+   * @return the all farms
+   */
   @GetMapping
   public List<FarmDto> getAllFarms() {
     List<Farm> farmList = this.farmService.getAllFarms();
