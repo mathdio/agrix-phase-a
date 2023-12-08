@@ -26,11 +26,11 @@ public class Farm {
   public Farm() {
   }
 
-  public Farm(Long id, String name, Double size) {
+  public Farm(Long id, String name, Double size, List<Crop> crops) {
     this.id = id;
     this.name = name;
     this.size = size;
-    this.crops = null;
+    this.crops = crops;
   }
 
   public Long getId() {
@@ -55,5 +55,13 @@ public class Farm {
 
   public void setSize(Double size) {
     this.size = size;
+  }
+
+  public List<Crop> getCrops() {
+    return crops;
+  }
+
+  public void setCrops(List<Crop> crops) {
+    this.crops = crops;
   }
 }

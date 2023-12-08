@@ -26,11 +26,11 @@ public class Crop {
   public Crop() {
   }
 
-  public Crop(Long id, String name, Double plantedArea, Farm farm) {
+  public Crop(Long id, String name, Double plantedArea) {
     this.id = id;
     this.name = name;
     this.plantedArea = plantedArea;
-    this.farm = farm;
+    this.farm = null;
   }
 
   public Long getId() {
@@ -55,5 +55,13 @@ public class Crop {
 
   public void setPlantedArea(Double plantedArea) {
     this.plantedArea = plantedArea;
+  }
+
+  public Farm getFarm() {
+    return farm;
+  }
+
+  public void setFarm(Farm farm) {
+    this.farm = farm;
   }
 }
