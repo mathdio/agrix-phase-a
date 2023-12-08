@@ -72,6 +72,12 @@ public class FarmController {
     return ResponseEntity.ok(optionalFarm.get());
   }
 
+  /**
+   * Gets all crops from farm.
+   *
+   * @param farmId the farm id
+   * @return the all crops from farm
+   */
   @GetMapping("/{farmId}/crops")
   public List<CropDto> getAllCropsFromFarm(@PathVariable Long farmId) {
     List<Crop> cropList = this.farmService.getAllCropsFromFarm(farmId);

@@ -67,6 +67,12 @@ public class FarmService {
     return this.cropRepository.save(crop);
   }
 
+  /**
+   * Gets all crops from farm.
+   *
+   * @param farmId the farm id
+   * @return the all crops from farm
+   */
   public List<Crop> getAllCropsFromFarm(Long farmId) {
     Optional<Farm> optionalFarm = this.farmRepository.findById(farmId);
     if (optionalFarm.isEmpty()) {
