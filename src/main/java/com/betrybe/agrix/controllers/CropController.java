@@ -7,6 +7,7 @@ import java.util.List;
 import java.util.stream.Collectors;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -36,5 +37,11 @@ public class CropController {
         .map(crop -> new CropDto(crop.getId(), crop.getName(), crop.getPlantedArea(),
             crop.getFarm().getId()))
         .collect(Collectors.toList());
+  }
+
+  @GetMapping("/{cropId}")
+  public CropDto getCropById(@PathVariable Long cropId) {
+    Crop crop = this.cropService.getCropById(cropId);
+    return new CropDto(crop.getId(), crop.getName(), crop.getPlantedArea(), crop.getFarm().getId());
   }
 }
