@@ -37,3 +37,10 @@ The API endpoints are listed in the table below, as well as some examples of req
 Services and endpoints:
 | Service | Method | Endpoint |
 |  :---:  | :----: | :------: |
+| Register a farm | POST | http://localhost:8080/farms |
+| Set a crop | POST | http://localhost:8080/{farmId}/crops |
+| Get all farms | GET | http://localhost:8080/farms |
+| Get a farm by ID | GET | http://localhost:8080/farms/{farmId} |
+| Get all crops from a farm | GET | http://localhost:8080/farms/{farmId}/crops |
+
+
