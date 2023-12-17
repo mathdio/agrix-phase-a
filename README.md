@@ -3,6 +3,7 @@
 A farms manager and monitorer API, developed as a [Trybe](https://www.betrybe.com) Project.
 
 ## 💻 About this project
+This is a API built in Java with which the user can monitor and manager a system of farms and theirs crops.
 
 
 ## 🛠️ Built with
