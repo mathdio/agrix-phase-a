@@ -1,4 +1,4 @@
-# 🚧 README em construção! 🚧
+# 🚧 README under construction! 🚧
 # 🧑‍🌾 Farms Manager API
 A farms manager and monitorer API, developed as a [Trybe](https://www.betrybe.com) Project.
 
