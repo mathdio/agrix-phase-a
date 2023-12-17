@@ -43,4 +43,19 @@ Services and endpoints:
 | Get a farm by ID | GET | http://localhost:8080/farms/{farmId} |
 | Get all crops from a farm | GET | http://localhost:8080/farms/{farmId}/crops |
 
+> Request body example to register a farm:
+> ```
+> {
+>  "name": "cenoura",
+>  "size": 10
+> }
+> ```
 
+
+> Request body example to set a crop:
+> ```
+> {
+>  "name": "cenoura",
+>  "plantedArea": 5.43
+> }
+> ```
