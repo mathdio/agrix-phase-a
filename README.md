@@ -27,3 +27,4 @@ In project root terminal, run:
 ```
 docker-compose up -d
 ```
+Once the container is created (or after starting the container), the application will start running automatically, unless the port 8080 is already in use. You can start the container with `docker start agrix-app` after stopping the process using the port 8080. You can stop the containers running `docker stop agrix-app` or `docker stop agrix-db`.
