@@ -1,9 +1,8 @@
-# 🚧 README under construction! 🚧
 # 🧑‍🌾 Farms Manager API
 A farms manager and monitorer API, developed as a [Trybe](https://www.betrybe.com) Project.
 
 ## 💻 About this project
-This is a API built in Java and using Spring framework, with which the user can monitor and manager a system of farms and theirs crops.
+This is a API built in Java and using Spring framework, with which the user can monitor and manager a system of farms and theirs crops. The API has endpoints that allow the users to: register new farms, set crops to a farm, search farms by ID, search all farms and search for all crops from a farm. The available endpoints are listed in a section below.
 
 
 ## 🛠️ Built with
@@ -59,3 +58,5 @@ Services and endpoints:
 >  "plantedArea": 5.43
 > }
 > ```
+
+> To set a crop to a farm, you need to pass the farm ID in the endpoint, as in `http://localhost:8080/1/crops`
